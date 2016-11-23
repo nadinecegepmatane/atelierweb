@@ -31,11 +31,12 @@ $listeLieux = $basededonnees->query($sql);
 </script>
 <style>
 
-	#liste-lieux li
+	#liste-lieux li, #liste-lieux li a
 	{
 		color:white;
 		font-size:30px;
 		font-weight:bold;
+		text-decoration:none;
 	}
 
 
@@ -78,10 +79,9 @@ $listeLieux = $basededonnees->query($sql);
     foreach ($listeLieux as $lieu) 
 	{
 		?>
-		<li><?php echo $lieu['nom'];?></li>
-		<?php
-        //print $lieu['lien'] . "\t";
-    }
+		<li><a href="<?php echo $lieu['lien'];?>"><?php echo $lieu['nom'];?></a></li>
+		<?php    
+	}
 
 ?>
 </ul>
